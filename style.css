@@ -1,4 +1,3 @@
-/* Stylesheet */
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +28,14 @@ html, body {
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+    transform: translateX(-50%) translateY(-150%);
+    opacity: 0;
+}
+
+.navbar.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
 }
 
 .nav-btn {
@@ -42,6 +49,22 @@ html, body {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-btn.active .nav-icon {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 .nav-btn.active {
@@ -59,6 +82,10 @@ html, body {
     background: rgba(255, 255, 255, 0.1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .scroll-container {
     width: 100%;
     height: 100%;
@@ -67,6 +94,8 @@ html, body {
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 0;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -83,6 +112,7 @@ html, body {
     font-size: 3rem;
     font-weight: bold;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .container:nth-child(1) { background: #ff6b6b; }
