@@ -1,39 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gry hazardowe</title>
-<link rel="stylesheet" href="style.css">
+    <title>Gry hazardowe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <button class="nav-btn active" data-section="0">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v10l7 7"/><circle cx="12" cy="12" r="2"/></svg>
-            <span>Ruletka</span>
-        </button>
-        <button class="nav-btn" data-section="1">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><path d="M6 14h4"/><path d="M8 10v4"/><path d="M16 10v4"/></svg>
-            <span>Blackjack</span>
-        </button>
-        <button class="nav-btn" data-section="2">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="8" height="16" rx="1"/><rect x="14" y="4" width="8" height="16" rx="1"/><path d="M6 8h4"/><path d="M18 8h-4"/></svg>
-            <span>Poker</span>
-        </button>
-        <button class="nav-btn" data-section="3">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7" y1="8" x2="7" y2="16"/><line x1="11" y1="8" x2="11" y2="16"/><line x1="15" y1="8" x2="15" y2="16"/><circle cx="17" cy="12" r="1"/></svg>
-            <span>Automaty</span>
-        </button>
-        <button class="nav-btn" data-section="4">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span>Superbet</span>
-        </button>
+        <button class="nav-btn active" data-section="0">Ruletka</button>
+        <button class="nav-btn" data-section="1">Blackjack</button>
+        <button class="nav-btn" data-section="2">Poker</button>
+        <button class="nav-btn" data-section="3">Automaty</button>
+        <button class="nav-btn" data-section="4">Superbet</button>
     </nav>
+
     <main class="scroll-container">
-        <div class="container">1</div>
-        <div class="container">2</div>
-        <div class="container">3</div>
-        <div class="container">4</div>
-        <div class="container">5</div>
+        <div class="section section-ruletka">
+            <div class="section-card">
+                <img src="https://picsum.photos/seed/ruletka/900/450" alt="Ruletka w kasynie">
+                <h2>Ruletka</h2>
+                <p>Ruletka to gra z kołem i kulką. Stawiasz na numer, kolor lub parzyste/nieparzyste.</p>
+                <ul>
+                    <li>Prosta i szybka</li>
+                    <li>Dobra na pierwszą rundę</li>
+                    <li>Każdy obrót jest ekscytujący</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section section-blackjack">
+            <div class="section-card">
+                <img src="https://picsum.photos/seed/blackjack/900/450" alt="Blackjack i karty">
+                <h2>Blackjack</h2>
+                <p>Blackjack to gra karciana, w której chcesz mieć 21 punktów lub więcej niż krupier.</p>
+                <ul>
+                    <li>Proste zasady</li>
+                    <li>Trzeba myśleć na spokojnie</li>
+                    <li>Super do szybkich rozgrywek</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section section-poker">
+            <div class="section-card">
+                <img src="https://picsum.photos/seed/poker/900/450" alt="Karty do pokera">
+                <h2>Poker</h2>
+                <p>Poker to gra strategii i blefu. Trzeba ocenić rękę i wiedzieć, kiedy zaryzykować.</p>
+                <ul>
+                    <li>Więcej myślenia niż szczęścia</li>
+                    <li>Blef może wygrać rozdanie</li>
+                    <li>Dobra gra dla skupionych</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section section-automaty">
+            <div class="section-card">
+                <img src="https://picsum.photos/seed/automaty/900/450" alt="Automaty do gry">
+                <h2>Automaty</h2>
+                <p>Automaty to jasne światła i szybkie zakłady. Wkładasz monetę i czekasz na trafienie.</p>
+                <ul>
+                    <li>Łatwe do grania</li>
+                    <li>Kolorowe ekrany</li>
+                    <li>Szybkie wygrane lub porażki</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section section-superbet">
+            <div class="section-card">
+                <img src="https://picsum.photos/seed/superbet/900/450" alt="Zakłady sportowe">
+                <h2>Superbet</h2>
+                <p>Superbet to miejsce na zakłady sportowe i gry online. Dzięki temu możesz stawiać na mecze i kasyno.</p>
+                <ul>
+                    <li>Sport i gry w jednym</li>
+                    <li>Proste typowanie</li>
+                    <li>Dobre dla fanów emocji</li>
+                </ul>
+            </div>
+        </div>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
