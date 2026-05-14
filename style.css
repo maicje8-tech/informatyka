@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --radius-squircle-g2: 32px;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -25,33 +29,36 @@ nav.navbar {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
-    padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 999px;
-    backdrop-filter: blur(16px);
+    gap: 12px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: calc(var(--radius-squircle-g2) * 1.1);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(18px);
     z-index: 20;
 }
 
 .nav-btn {
-    border: none;
-    background: transparent;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.06);
     color: #e7ecff;
-    padding: 10px 14px;
-    border-radius: 999px;
+    padding: 10px 16px;
+    border-radius: calc(var(--radius-squircle-g2) / 1.6);
     cursor: pointer;
     font-size: 13px;
     font-weight: 600;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
 }
 
 .nav-btn.active {
     background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.28);
     color: #ffffff;
     transform: translateY(-1px);
 }
@@ -75,24 +82,40 @@ nav.navbar {
     padding: 16px;
     scroll-snap-align: start;
     position: relative;
+    overflow: hidden;
+}
+
+.section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    transform: scale(1.06);
+    opacity: 0.42;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .section::before {
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.2;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    opacity: 0.45;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.48));
     pointer-events: none;
+    z-index: 1;
 }
 
 .section-card {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: min(100%, 1100px);
     min-height: calc(100vh - 60px);
     padding: 32px 36px;
-    border-radius: 30px;
+    border-radius: var(--radius-squircle-g2);
     background: rgba(7, 15, 40, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
@@ -105,7 +128,7 @@ nav.navbar {
     width: 100%;
     height: auto;
     max-height: 420px;
-    border-radius: 20px;
+    border-radius: var(--radius-squircle-g2);
     object-fit: cover;
     margin-bottom: 22px;
 }
@@ -150,24 +173,24 @@ nav.navbar {
     line-height: 1;
 }
 
-.section-ruletka {
-    background: linear-gradient(135deg, #ff6f6f 0%, #ffb0a0 100%);
+.section-ruletka::after {
+    background-image: url('https://event-casino.pl/wp-content/uploads/2023/07/Dodaj-podtytul-19-1024x683.jpg');
 }
 
-.section-blackjack {
-    background: linear-gradient(135deg, #19b9ad 0%, #84fff2 100%);
+.section-blackjack::after {
+    background-image: url('https://cdn.hswstatic.com/gif/how-to-play-blackjack-lead.jpg');
 }
 
-.section-poker {
-    background: linear-gradient(135deg, #4d94ff 0%, #8eceff 100%);
+.section-poker::after {
+    background-image: url('https://sport.betfan.pl/wp-content/uploads/2022/03/poker-texas-karty-zasady-e1646493387250.jpg');
 }
 
-.section-automaty {
-    background: linear-gradient(135deg, #ffbf6a 0%, #ffe7a7 100%);
+.section-automaty::after {
+    background-image: url('https://www.sts.pl/blog/wp-content/uploads/2024/07/jak-grac-na-automatach-kasynowych-1000x570.jpg');
 }
 
-.section-superbet {
-    background: linear-gradient(135deg, #b778ff 0%, #d7abff 100%);
+.section-superbet::after {
+    background-image: url('https://legalnibukmacherzy.pl/wp-content/uploads/2025/12/super-seria.jpg');
 }
 
 @media (max-width: 760px) {
